@@ -1,0 +1,50 @@
+{
+  "name": "n8n-nodes-job-text-splitter",
+  "version": "1.0.0",
+  "description": "Custom n8n node for intelligently splitting job data for vector embeddings",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "author": {
+    "name": "Gareth",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=18.10",
+    "pnpm": ">=7.18"
+  },
+  "packageManager": "pnpm@7.18.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "pnpm build && pnpm lint -o .eslintcache && pnpm test",
+    "test": "jest"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/JobTextSplitter/JobTextSplitter.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.16",
+    "n8n-workflow": "*",
+    "typescript": "^5.1.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
